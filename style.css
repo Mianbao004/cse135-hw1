@@ -1,0 +1,57 @@
+:root {
+    --content-background: rgb(220, 220, 220)
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 1rem;
+    margin: 0rem;
+}
+
+header {
+  display: flex;            
+  align-items: flex-start;       
+  justify-content: space-between;
+}
+
+header aside {
+  background-color: var(--content-background, lightgrey);
+  padding: 0rem 1rem;
+  margin: 1rem;
+  border-radius: 5px;
+}
+
+
+h2 {
+    margin-bottom: 0rem;
+}
+
+header aside h3 {
+  font-weight: normal;
+  font-size: 1rem;
+  margin: 0rem;
+}
+
+main {
+    flex: 1;
+}
+
+main ul,
+main p,
+header ul {
+    margin: 0;
+    margin-bottom: 1rem;
+    padding: 0.2rem 0.5rem;
+    background-color: var(--content-background, lightgrey);
+    border-radius: 5px;
+    list-style-position: inside;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
