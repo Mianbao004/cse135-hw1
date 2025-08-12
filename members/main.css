@@ -1,0 +1,227 @@
+:root {
+  --font-main: "Indie Flower", cursive;
+  --font-korean: "Nanum Pen Script", cursive;
+  --bg-color: #fff9f2;
+  --text-primary-color: #2a2a2a;
+  --bg-secondary-color: white;
+  --linkcolor: #004ea8;
+}
+
+body {
+  background-color: var(--bg-color, white);
+  font-family: var(--font-main, cursive);
+  display: flex;
+  flex-direction: column;
+  color: var(--text-primary-color, black);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.index-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 3rem 3rem 0rem 3rem;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    padding-top: 0;
+    letter-spacing: 0.1em;
+  }
+
+  p {
+    margin: 0 0 1rem 0;
+  }
+}
+
+.korean-text-transform {
+  font-family: var(--font-korean, cursive);
+  font-size: 5.5rem;
+  line-height: 1;
+  margin-bottom: -0.5rem;
+  display: inline-block;
+  transition: transform 0.6s ease-in-out;
+}
+
+.korean-text-transform:hover {
+  transform: rotate(360deg);
+}
+
+@media (max-width: 420px) {
+  .korean-text-transform {
+    font-size: 3.5rem;
+  }
+  
+}
+
+.container {
+  background-color: var(--bg-secondary-color, white);
+  border-radius: 15px;
+  border: 3px solid var(--header-border, darkblue);
+  box-shadow: 6px 5px 5px rgba(0, 162, 255, 0.369);
+  width: 80vw;
+  margin: 2rem auto;
+  padding: 1.5rem;
+
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) 2fr;
+  /* COLUMN1: won't shrink past 200px or extend past 1fr; COLUMN2: text takes up 2fr*/
+  grid-template-rows: auto minmax(200px, auto);
+  /* Header row and flexible second row */
+  grid-template-areas:
+    "header header"
+    "image content";
+}
+
+.container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary-color, black);
+  grid-area: header;
+  margin-bottom: 1rem;
+}
+
+#image-profile {
+  width: 100%;
+  /* Grid's width and height */
+  height: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  /* Scales img */
+  border-radius: 20px;
+  border: 2px solid var(--text-primary-color, black);
+  grid-area: image;
+}
+
+.container p {
+  font-size: 1.45rem;
+  line-height: 2;
+  margin: 0;
+  padding-left: 2rem;
+  /* Space between image and text */
+  grid-area: content;
+}
+
+footer {
+  text-align: left;
+  margin: auto 1rem;
+}
+
+.row-small-containers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 80vw;
+  margin: 2rem auto;
+  align-items: start;
+}
+
+@media (max-width: 650px) {
+  .row-small-containers {
+    grid-template-columns: 1fr;
+    /* stack small containers once <= 650px */
+    width: 95vw;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    h2 {
+      padding: 0 0 1rem 0;
+      margin: 0;
+      text-align: center;
+    }
+  }
+}
+
+.small-container {
+  background-color:  var(--bg-secondary-color, white);
+  border-radius: 15px;
+  border: 3px solid var(--header-border, darkblue);
+  box-shadow: 6px 5px 5px rgba(0, 162, 255, 0.369);
+  padding: 1rem 1.5rem;
+  height: 100%;
+  box-sizing: border-box;
+
+  h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  *:not(h2) {
+    font-size: 1.4rem;
+    text-align: left;
+  }
+}
+
+.small-container,
+.container,
+#icebreaker {
+  opacity: 0;
+  animation-name: fadein;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 200ms;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+address {
+  text-align: left;
+}
+
+#main-404 {
+  margin: auto auto;
+
+  section {
+    text-align: center;
+  }
+}
+
+progress[value] {
+  width: 100%;
+  height: 10px;
+  appearance: none;
+}
+
+/* WebKit (Chrome, Safari) */
+progress::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 5px;
+}
+progress::-webkit-progress-value {
+  background-color: var(--bar-color, rgb(19, 160, 19));
+  border-radius: 5px;
+}
+
+/* Firefox */
+progress::-moz-progress-bar {
+  background-color: var(--bar-color, rgb(19, 160, 19));
+  border-radius: 5px;
+}
+
+footer a {
+  color: var(--linkcolor);
+  text-decoration: underline;
+}
+
+#lang-korean, #lang-mandarin, #lang-indonesian {
+  margin-bottom: 2rem;
+}
