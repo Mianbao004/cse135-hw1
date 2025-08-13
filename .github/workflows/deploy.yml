@@ -1,0 +1,25 @@
+name: HW1 Remote SSH Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deployment
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{secrets.IP}}
+          username: ${{secrets.USER}}
+          key: ${{secrets.SERVER_SSH_KEY}}
+          port: ${{secrets.PORT}}
+          script: |
+            cd ${{ secrets.PRODUCTION_FOLDER }}
+            ${{ secrets.SCRIPT }}
