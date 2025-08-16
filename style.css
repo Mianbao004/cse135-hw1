@@ -10,6 +10,10 @@ html, body {
     margin: 0rem;
 }
 
+main {
+  flex: 1;
+}
+
 header {
   display: flex;            
   align-items: flex-start;       
@@ -23,7 +27,6 @@ header aside {
   border-radius: 5px;
 }
 
-
 h2 {
     margin-bottom: 0rem;
 }
@@ -34,28 +37,37 @@ header aside h3 {
   margin: 0rem;
 }
 
-main {
-    flex: 1;
+section {
+  display: flex;
+  background-color: var(--content-background, lightgrey);
+  padding: 0rem;
+  border-radius: 5px;
 }
 
-main ul,
-main p,
-header ul {
-    margin: 0;
-    margin-bottom: 1rem;
-    padding: 0.2rem 0.5rem;
-    background-color: var(--content-background, lightgrey);
-    border-radius: 5px;
-    list-style-position: inside;
+.parent-list {
+  padding: 0rem;
+  margin: 0rem;
+  box-sizing: border-box;
+  width: 100%; 
+  gap: 1rem;
+}
+
+p {
+  margin: 0.5rem;
+}
+
+ul {
+  margin: 0.5rem;
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+section > ul {
+  margin-right: 2rem;
 }
 
 footer {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-#container {
   display: flex;
-  flex: 1;
+  justify-content: center;
+  text-align: center;
 }
