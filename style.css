@@ -55,3 +55,7 @@ footer {
     text-align: center;
 }
 
+#container {
+  display: flex;
+  flex: 1;
+}
