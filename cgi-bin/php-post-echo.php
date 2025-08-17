@@ -17,7 +17,7 @@
             }
             echo '</ul>';
         } else {
-            echo '<p><b>Error:</b> This page only accepts GET requests.</p>';
+            echo '<p><b>Error:</b> This page only accepts POST requests.</p>';
         }
     ?>
     
