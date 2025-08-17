@@ -19,7 +19,7 @@
     <h1>Environment Variables</h1>
     <?php 
         foreach ($array as $key => $value){
-            echo $key . ': ' . $value . '<br>';
+            echo '<b>' . htmlspecialchars($key) . '</b>: ' . htmlspecialchars($value) . '<br>';
         }
     ?>
 </body>
