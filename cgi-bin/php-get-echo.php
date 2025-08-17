@@ -11,7 +11,7 @@
     <?php
         if ($_SERVER['REQUEST_METHOD'] === 'GET'){
             $q_str = $_SERVER['QUERY_STRING'];
-            echo '<b style="margin-bottom: 0;>Raw Query String:</b> ' . htmlspecialchars($q_str) . '<br />';
+            echo '<b style="margin-bottom: 0;">Raw Query String:</b> ' . htmlspecialchars($q_str) . '<br />';
             echo 'Formatted Query String: <br />';
 
             parse_str($q_str, $params); //Stores parsed query string into an associative array
