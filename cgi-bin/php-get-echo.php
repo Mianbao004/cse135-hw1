@@ -9,9 +9,13 @@
     <h1 style="text-align: center;">Get Request Echo</h1>
     <hr>
     <?php
-        $q_str = $_SERVER['QUERY_STRING'];
-        echo '<p style="margin-bottom: 0;"><b>Query String:</b> ' . htmlspecialchars($q_str) . '</p> <br>';
-        echo htmlspecialchars($q_str) . '<br>';
+        if ($_SERVER['REQUEST_METHOD'] === 'GET'){
+            $q_str = $_SERVER['QUERY_STRING'];
+            echo '<p style="margin-bottom: 0;"><b>Query String:</b> ' . htmlspecialchars($q_str) . '</p> <br>';
+            echo htmlspecialchars($q_str) . '<br>';
+        } else {
+            echo '<p><b>Error:</b> This page only accepts GET requests.</p>';
+        }
     ?>
 </body>
 </html>
