@@ -9,13 +9,13 @@
     <h1>Hello HTML World with PhP</h1>
     <?php
         $name = "PhP";
-        echo "Hello HTML World from $name \n";
+        echo "Hello HTML World from $name <br>";
 
         $date = date("l, F j, Y H:i:s");
-        echo "This program is generated at: $date \n";
+        echo "This program is generated at: $date <br>";
 
         $ip_address = $_SERVER['REMOTE_ADDR'];
-        echo "Your IP Address is: $ip_address \n";
+        echo "Your IP Address is: $ip_address <br>";
     ?>
     
 </body>
