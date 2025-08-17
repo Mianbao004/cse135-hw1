@@ -10,6 +10,7 @@
     <hr>
     <?php
         $q_str = $_SERVER['QUERY_STRING'];
+        echo '<p> Query String: ' . htmlspecialchars($q_str) '</p> <br>';
         echo htmlspecialchars($q_str);
     ?>
 </body>
