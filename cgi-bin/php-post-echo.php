@@ -8,14 +8,16 @@
 <body>
     <h1 style="text-align: center;">POST Request Echo</h1>
     <hr>
+    <b>Message Body : </b><br />
     <?php
         if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-            echo '<b>Message Body : </b><br />';
             echo '<ul>';
             foreach ($_POST as $key => $value){
-                echo '<li><b>' . htmlspecialchars($key) . ':</b> ' . htmlspecialchars($value) . '</li>';
+                echo '<li><b>' . htmlspecialchars($key) . ':</b> ' . htmlspecialchars($value) . '</li><br />';
             }
             echo '</ul>';
+        } else {
+            echo '<p><b>Error:</b> This page only accepts GET requests.</p>';
         }
     ?>
     
