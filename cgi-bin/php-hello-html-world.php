@@ -6,7 +6,8 @@
     <title>Hello PhP world!</title>
 </head>
 <body>
-    <h1>Hello HTML World with PhP</h1>
+    <h1 style="text-align: center;">Hello HTML World with PhP</h1>
+    <hr>
     <?php
         $name = "PhP";
         echo "Hello HTML World from $name <br>";
