@@ -2,10 +2,10 @@
     $server_vars = $_SERVER;
     $array = [];
     foreach ($server_vars as $key => $value) {
-        $array[key] = $value;
+        $array[$key] = $value;
     }
 
-    ksort($array) //Sort by key
+    ksort($array); // Sort by key
 ?>
 
 <!DOCTYPE html>
