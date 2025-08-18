@@ -1,11 +1,11 @@
 <?php
-    session_name("FakeSessionID");
+    session_name("FakeSessionID"); 
+    // Use FakeSessionID as the name of the session cookie to identify the user's session.
     session_start();
     // Looks out for a session cookie (usually called PHPSESSID)
     // If it exits -> Loads corresponsing data
     // Else --> creates new session and send a new cookie to the browser
     
-    $_SESSION['username'] = $_POST['username'];
     // PHP stores session data on the server (default: in /tmp or a similar directory).
 ?>
 
