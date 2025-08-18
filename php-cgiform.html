@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGI Form</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Session Test</h1>
+    <hr>
+    <label for="cgi-land">CGI using PhP</label>
+    <form action="php-session-1.php" method="POST" id="form">
+        <label>What is your name? </label>
+        <input type="text" name="username" autocomplete="off" required>
+        <br />
+        <input type="submit" value="Test Sessioning">
+        <!--
+        When user clicks "Test Session", the browser sends the form data to 
+        php-session-1.php and loads the response from that file. If that file 
+        outputs a HTML file, the browser will show that page and redirects via 
+        header(Location: x ). Then it saves a session and outputs a confirmation
+        while the user stays on that page.
+        -->
+    </form>
+</body>
+</html>
