@@ -1,4 +1,5 @@
 <?php
+    session_name("FakeSessionID");
     session_start();
     // Looks out for a session cookie (usually called PHPSESSID)
     // If it exits -> Loads corresponsing data

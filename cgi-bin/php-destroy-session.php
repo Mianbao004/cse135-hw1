@@ -19,9 +19,9 @@
 <body>
     <h1 style="text-align: center;">Session Destroyed</h1>
     <hr>
-    <a href="/cgi-bin/php-session-1.php">Back to Page 1</a>
-    <a href="/cgi-bin/php-session-2.php">Back to Page 2</a>
-    <a href="/php-cgiform.html">PhP CGI Form</a>
+    <a href="/cgi-bin/php-session-1.php">Back to Page 1</a><br />
+    <a href="/cgi-bin/php-session-2.php">Back to Page 2</a><br />
+    <a href="/php-cgiform.html">PhP CGI Form</a><br />
 
 </body>
 </html>
