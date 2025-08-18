@@ -19,10 +19,10 @@
     <h1 style="text-align: center;">PhP Sessions Page 1</h1>
     <hr>
     <?php 
-        echo '<b>Name: </b>' . $_SESSION['username'];
+        echo '<b>Name: </b>' . $_SESSION['username'] . '<br />';
     ?>
-    <a href="/cgi-bin/php-session-2.php">Session Page 2</a>
-    <a href="/php-cgiform.html">PhP CGI Form</a>
+    <a href="/cgi-bin/php-session-2.php">Session Page 2</a> <br />
+    <a href="/php-cgiform.html">PhP CGI Form</a> <br />
     
     <form action="/cgi-bin/php-destroy-session.php" method="GET">
         <button type="submit">Destroy Session</button>
