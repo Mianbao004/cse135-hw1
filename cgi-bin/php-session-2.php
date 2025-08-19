@@ -3,7 +3,7 @@
     session_set_cookie_params([
         'lifetime' => 3600,  // 1 hour
         'path' => '/',       // ('/') for all paths on the domain.
-        'domain' => '.mianbao004.site',      // Use your domain or leave blank
+        'domain' => '',      // Use your domain or leave blank
         'secure' => false,   // works on both http and https
         'httponly' => true   // If set to true, then PHP will attempt to send the httponly flag when setting the session cookie.
     ]);
