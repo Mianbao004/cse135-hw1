@@ -6,6 +6,14 @@
     // If it exits -> Loads corresponsing data
     // Else --> creates new session and send a new cookie to the browser
     
+    if ($_SERVER["REQUEST_METHOD"] === "POST"){
+        if (trim($_POST['username']) === ''){
+            $_SESSION['username'] = 'You do not have a name set';
+        } else {
+            $_SESSION['username'] = htmlspecialchars(strip_tags(trim($_POST['username'])));
+        }   
+    }
+    
     // PHP stores session data on the server (default: in /tmp or a similar directory).
 ?>
 
