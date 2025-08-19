@@ -20,6 +20,10 @@
         } else {
             $_SESSION['username'] = htmlspecialchars(strip_tags(trim($_POST['username'])));
         }   
+    } else {
+        if (!isset($_SESSION['username'])) {
+            $_SESSION['username'] = 'No session found. Please return submit a CGI Form.';
+        }
     }
 ?>
 

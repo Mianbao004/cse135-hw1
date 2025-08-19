@@ -12,6 +12,12 @@
     // Looks out for a session cookie (usually called PHPSESSID)
     // If it exits -> Loads corresponsing data
     // Else --> creates new session and send a new cookie to the browser
+
+    if (!isset($_SESSION['username'])){ //Bc if !isset, empty => true
+        $_SESSION['username'] = 'No session found. Please return submit a CGI Form.';
+    } else if (empty($_SESSION['username'])) {
+        $_SESSION['username'] = 'You do not have a name set';
+    }
 ?>
 
 <!DOCTYPE html>
