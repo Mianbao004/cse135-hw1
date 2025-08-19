@@ -7,7 +7,7 @@ app.set('trust proxy', true);            // To get correct client IP behind Apac
 
 app.use('/cgi-bin/hello-html-world', helloHtmlWorld);
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
