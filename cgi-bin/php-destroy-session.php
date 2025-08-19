@@ -1,12 +1,27 @@
 <?php
+    session_name("FakeSessionID");
     session_start();
     // Loads session data
 
+//To clear up server-side:
     session_unset(); 
     // Clears out all the variables in the $_SESSION array immediately in the current script.
-
     session_destroy();
     // Deletes the session data on the server (session file, etc.)
+
+//To clear up client-side => Expire exact cookie for browser to delete
+    if (ini_get("session.use_cookies")) { //if it is using cookies
+        $params = session_get_cookie_params(); //outputs an array
+        setcookie(
+            session_name(),    // curr session
+            '',                 //value of the cookie
+            time()-42000,       //expires immediately --> browser deletes it
+            $params["path"],
+            $params["domain"],
+            $params["secure"],
+            $params["httponly"]
+        );
+}
 ?>
 
 <!DOCTYPE html>
