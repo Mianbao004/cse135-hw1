@@ -1,14 +1,14 @@
 import express from 'express';
-import helloHtmlWorld from './cgi-bin/js-helloHtmlWorld.js';
+import cgiBinRouter from './cgi-bin/cgiBinRouter.js';
 
-const app = express();                   // Initializes and returns an Express application object
-app.set('trust proxy', true);            // To get correct client IP behind Apache via reverse proxy
-app.use('/cgi-bin/js-helloHtmlWorld.js', helloHtmlWorld);
+const app = express();
+
+app.set('trust proxy', true);
+
+// Mount everything under /cgi-bin
+app.use('/cgi-bin', cgiBinRouter);
 
 const PORT = process.env.PORT || 3000;
-
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
 });
-
-
