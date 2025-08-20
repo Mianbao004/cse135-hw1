@@ -2,7 +2,7 @@ import express from 'express';
 const router = express.Router();
 
 function noHtml(str) {
-    return str
+    return String(str)
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
@@ -10,6 +10,26 @@ function noHtml(str) {
         .replace(/'/g, '&#39;');
 }
 
+router.get('/', (req, res) => {
+    res.set('Content-Type', 'text/html; charset=utf-8');
+
+    const html = `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>POST Request Echo</title>
+        </head>
+        <body>
+            <h1 style="text-align: center;">POST Request Echo</h1>
+            <hr />
+        </body>
+        </html>
+    `;
+
+    res.send(html);
+});
 
 router.post('/', (req, res) => {
     res.set('Content-Type', 'text/html; charset=utf-8');
@@ -20,19 +40,18 @@ router.post('/', (req, res) => {
         <!DOCTYPE html>
         <html lang="en">
         <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>POST Request Echo</title>
         </head>
         <body>
             <h1 style="text-align: center;">POST Request Echo</h1>
-            <hr>
-
+            <hr />
     `;
 
     if (postParams.length) {
         html += `
-            <b style="margin-bottom: 0;">Raw Message Body:</b> ${noHtml(JSON.stringify(req.body))} <br />
+            <b style="margin-bottom: 0;">Raw Message Body:</b> <pre>${noHtml(JSON.stringify(req.body))}</pre>
             <b>Parsed Body Message:</b>
             <ul>
         `;
@@ -44,7 +63,6 @@ router.post('/', (req, res) => {
         html += '<p><b>Error:</b> This page only accepts POST requests.</p>';
     }
 
-
     html += `
         </body>
         </html>
@@ -52,6 +70,5 @@ router.post('/', (req, res) => {
 
     res.send(html);
 });
-
 
 export default router;
