@@ -11,13 +11,12 @@ function noHtml(str) {
 }
 
 router.post('/', (req, res) => {
-let username = req.session.username;
+    const username = req.body.username.trim();
+    req.session.username = username;
 
-if (!username) {
-    username = 'No session found. Please submit the CGI form.';
-} else if (username.trim() === '') {
-    username = 'You do not have a name set';
-}
+    if (username === '') {
+        req.session.username = 'You do not have a name set';
+    }
 
     res.send(`
     <!DOCTYPE html>
@@ -30,7 +29,7 @@ if (!username) {
         <body>
         <h1>NodeJS Sessions Page 1</h1>
         <hr>
-        <p><b>Name: </b>${noHtml(username)}</p><br />
+        <p><b>Name: </b>${noHtml(req.session.username)}</p><br />
         <a href="/node-bin/js-sessions-2.js">Sessions Page 2</a><br />
         <a href="/nodejs-cgiform.html">NodeJS CGI Form</a>
         <form action="/node-bin/js-session-destroy.js" method="GET">
