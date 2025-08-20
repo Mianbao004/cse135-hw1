@@ -11,13 +11,13 @@ function noHtml(str) {
 }
 
 router.post('/', (req, res) => {
-    //username = null or undefined --> 'No session found. Please submit the CGI form.'
-    let username = req.session.username;
-    if (username.trim() === '') {
-        username = 'You do not have a name set';
-    } else if (!username) {
-        user = 'No session found. Please submit the CGI form.'
-    }
+let username = req.session.username;
+
+if (!username) {
+    username = 'No session found. Please submit the CGI form.';
+} else if (username.trim() === '') {
+    username = 'You do not have a name set';
+}
 
     res.send(`
     <!DOCTYPE html>
