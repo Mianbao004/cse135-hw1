@@ -1,6 +1,3 @@
-import cgiBinRouter from './node-bin/cgiBinRouter.js';
-import LogRocket from 'logrocket';
-
 import express from 'express';
 import session from 'express-session';
 import sessionRouter from './node-bin/sessionRouter.js';
