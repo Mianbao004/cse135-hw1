@@ -43,11 +43,16 @@ router.post('/', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-    let username = req.session.username || '';
+    let username = req.body.username || '';
 
-    if (username.trim() === '') {
+    if (!username) {
+        username = '';
+    } else if (username.trim() === '') {
         username = 'You do not have a name set';
+    } else {
+        username = username.trim();
     }
+    req.session.username = username;
 
     res.send(`
     <!DOCTYPE html>
