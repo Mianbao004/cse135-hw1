@@ -30,7 +30,7 @@ router.post('/', (req, res) => {
         <body>
         <h1>NodeJS Sessions Page 1</h1>
         <hr>
-        <p><b>Name: </b>${req.session.username}</p><br />
+        <p><b>Name: </b>${noHtml(username)}</p><br />
         <a href="/node-bin/js-sessions-2.js">Sessions Page 2</a><br />
         <a href="/nodejs-cgiform.html">NodeJS CGI Form</a>
         <form action="/node-bin/js-session-destroy.js" method="GET">
@@ -62,7 +62,7 @@ router.get('/', (req, res) => {
         <body>
         <h1>NodeJS Sessions Page 1</h1>
         <hr>
-        <p><b>Name: </b>${req.session.username}</p><br />
+        <p><b>Name: </b>${noHtml(username)}</p><br />
         <a href="/node-bin/js-sessions-2.js">Sessions Page 2</a><br />
         <a href="/nodejs-cgiform.html">NodeJS CGI Form</a>
         <form action="/node-bin/js-session-destroy.js" method="GET">
