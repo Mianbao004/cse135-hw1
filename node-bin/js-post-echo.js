@@ -53,7 +53,7 @@ router.post('/', (req, res) => {
 
     if (postParams.length) {
         html += `
-        <b style="margin-bottom: 0;">Raw Message Body: </b> ${noHtml(JSON.stringify(req.body))}
+        <b style="margin-bottom: 0;">Raw Message Body: </b> ${noHtml(JSON.stringify(req.body))} <br />
         <b>Parsed Body Message:</b>
         <ul>
         `;
