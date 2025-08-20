@@ -44,7 +44,7 @@ router.get('/', (req, res) => {
     }
 
     for (const [key, value] of headers) {
-        html += `<b>${noHtml(key)}</b>: ${noHtml(value)}<br>\n`;
+        html += `<b>HTTP_${noHtml(key.toUpperCase())}</b>: ${noHtml(value)}<br>\n`;
     }
 
     html += `
