@@ -24,6 +24,8 @@ router.get('/', (req, res) => {
         <body>
             <h1 style="text-align: center;">POST Request Echo</h1>
             <hr />
+            <b style="margin-bottom: 0;">Raw Message Body:</b>
+            <b>Parsed Body Message:</b>
         </body>
         </html>
     `;
@@ -47,13 +49,11 @@ router.post('/', (req, res) => {
         <body>
             <h1 style="text-align: center;">POST Request Echo</h1>
             <hr />
-            <b style="margin-bottom: 0;">Raw Message Body:</b>
-            <b>Parsed Body Message:</b>
     `;
 
     if (postParams.length) {
         html += `
-        <b style="margin-bottom: 0;">Raw Message Body: </b>${noHtml(JSON.stringify(req.body))}
+        <b style="margin-bottom: 0;">Raw Message Body: </b> ${noHtml(JSON.stringify(req.body))}
         <b>Parsed Body Message:</b>
         <ul>
         `;
