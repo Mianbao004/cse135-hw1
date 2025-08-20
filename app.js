@@ -1,6 +1,7 @@
 import express from 'express';
 import session from 'express-session';
 import sessionRouter from './node-bin/sessionRouter.js';
+import cgiBinRouter from './node-bin/cgiBinRouter.js';
 
 const app = express();
 
