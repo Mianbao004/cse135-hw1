@@ -1,8 +1,6 @@
 import express from 'express';
 import session from 'express-session';
 import sessionRouter from './node-bin/sessionRouter.js';
-LogRocket.init('23mc9d/mianbao004site');
-
 
 const app = express();
 
