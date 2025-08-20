@@ -5,6 +5,7 @@ import envJS from './js-environment.js';
 import getJS from './js-get-echo.js';
 import postJS from './js-post-echo.js';
 import generalJS from './js-general-request-echo.js';
+import sess1 from './js-sessions-1.js';
 
 const router = express.Router();
 
@@ -14,6 +15,6 @@ router.use('/js-environment.js', envJS);
 router.use('/js-get-echo.js', getJS);
 router.use('/js-post-echo.js', postJS);
 router.use('/js-general-request-echo.js', generalJS);
-
+router.use('/js-sessions-1.js', sess1);
 
 export default router;
