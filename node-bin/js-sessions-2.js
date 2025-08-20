@@ -33,7 +33,7 @@ router.get('/', (req, res) => {
       <p><b>Name: </b>${noHtml(username)}</p><br />
       <a href="/node-bin/js-sessions-1.js">Session Page 1</a><br />
       <a href="/nodejs-cgiform.html">NodeJS CGI Form</a><br />      
-      <form action="/node-bin/destroy" method="GET">
+      <form action="/node-bin/js-session-destroy.js" method="GET">
         <button type="submit">Destroy Session</button>
       </form>
     </body>
