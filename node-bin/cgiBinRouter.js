@@ -4,6 +4,7 @@ import helloJsonWorld from './js-hello-json-world.js';
 import envJS from './js-environment.js';
 import getJS from './js-get-echo.js';
 import postJS from './js-post-echo.js';
+import generalJS from './js-general-request-echo.js';
 
 const router = express.Router();
 
@@ -12,7 +13,7 @@ router.use('/js-hello-json-world.js', helloJsonWorld);
 router.use('/js-environment.js', envJS);
 router.use('/js-get-echo.js', getJS);
 router.use('/js-post-echo.js', postJS);
-
+router.use('/js-general-request-echo.js', generalJS);
 
 
 export default router;
