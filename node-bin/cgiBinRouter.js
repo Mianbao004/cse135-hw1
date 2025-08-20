@@ -1,6 +1,6 @@
 import express from 'express';
 import helloHtmlWorld from './js-helloHtmlWorld.js';
-import helloJsonWorld from './js-helloJsonWorld.js';
+import helloJsonWorld from './js-hello-json-world.js';
 
 const router = express.Router();
 
