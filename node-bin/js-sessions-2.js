@@ -11,17 +11,13 @@ function noHtml(str) {
 }
 
 router.get('/', (req, res) => {
-    let username = req.body.username || '';
+    //username = null or undefined --> 'No session found. Please submit the CGI form.'
+    let username = req.session.username || 'No session found. Please submit the CGI form.';
 
-    if (!username) {
-        username = '';
-    } else if (username.trim() === '') {
+    //username = "_" --> You do not have a name set
+    if (username.trim() === '') {
         username = 'You do not have a name set';
-    } else {
-        username = username.trim();
     }
-    req.session.username = username;
-
     
     res.send(`
     <!DOCTYPE html>
